@@ -66,6 +66,7 @@
 </li>
       </div>
 
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -115,6 +116,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <li><a class="dropdown-item" href="discuss.html">Discussion</a></li>
 <li><a class="dropdown-item" href="reference.html">Summary of Basic Commands</a></li>
+<li><a class="dropdown-item" href="resources.html">Additional Resources</a></li>
           </ul>
 </li>
       </ul>
@@ -342,6 +344,7 @@
                       </li>
                       <li><a href="discuss.html">Discussion</a></li>
 <li><a href="reference.html">Summary of Basic Commands</a></li>
+<li><a href="resources.html">Additional Resources</a></li>
                     </ul>
 </div>
                 </div>
@@ -502,13 +505,15 @@ will check shell scripts (both uploaded and typed in) for common
 errors.</p></li>
 <li><p>Resources for “splitting” your shell so that recent commands
 remain in view: <a href="https://github.com/rgaiacs/swc-shell-split-window" class="external-link">https://github.com/rgaiacs/swc-shell-split-window</a>.</p></li>
-<li><p>Tab completion sounds like a small thing: it isn’t. Re-running
-old commands using <code>!123</code> or <code>!wc</code> isn’t a small
-thing either, and neither are wildcard expansion and <code>for</code>
-loops. Each one is an opportunity to repeat one of the big ideas of
-Software Carpentry: if the computer <em>can</em> repeat it, some
-programmer somewhere will almost certainly have built some way for the
-computer <em>to</em> repeat it.</p></li>
+<li><p>Tab completion sounds like a small thing: it isn’t. Be sure to
+explain when you use tab completion while typing, doing this often will
+allow learners to go faster and remind them of a useful technique.
+Re-running old commands using <code>!123</code> or <code>!wc</code>
+isn’t a small thing either, and neither are wildcard expansion and
+<code>for</code> loops. Each one is an opportunity to repeat one of the
+big ideas of Software Carpentry: if the computer <em>can</em> repeat it,
+some programmer somewhere will almost certainly have built some way for
+the computer <em>to</em> repeat it.</p></li>
 <li><p>Building up a pipeline with four or five stages, then putting it
 in a shell script for re-use and calling that script inside a
 <code>for</code> loop, is a great opportunity to show how “seven plus or
@@ -551,13 +556,6 @@ a tidier prompt, enter the command:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">'$ '</span></span></code></pre>
 </div>
 </li>
-<li><p>On Windows machines if <code>nano</code> hasn’t been properly
-installed with the <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
-Carpentry Windows Installer</a> it is possible to use
-<code>notepad</code> as an alternative. There will be a GUI interface
-and line endings are treated differently, but otherwise, for the
-purposes of this lesson, <code>notepad</code> and <code>nano</code> can
-be used almost interchangeably.</p></li>
 <li>
 <p>On Windows, it appears that:</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -653,15 +651,17 @@ Carpentry Windows Installer</a>.</p>
 	
         | <a href="https://github.com/swcarpentry/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/swcarpentry/shell-novice/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/swcarpentry/shell-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
-			</div>
-			<div class="col-md-6">
+        <p>
+        <a href="https://github.com/swcarpentry/shell-novice/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+		</div>
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
-			</div>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+		</div>
 		</footer>
 </div> <!-- / div.container -->
 	<div id="to-top">
@@ -672,10 +672,10 @@ Carpentry Windows Installer</a>.</p>
   <script type="application/ld+json">
     {
   "@context": "https://schema.org",
-  "@type": "TrainingMaterial",
+  "@type": "LearningResource",
   "@id": "https://swcarpentry.github.io/shell-novice/instructor-notes.html",
   "inLanguage": "en",
-  "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+  "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Instructor Notes",
@@ -683,8 +683,8 @@ Carpentry Windows Installer</a>.</p>
   "url": "https://swcarpentry.github.io/shell-novice/instructor-notes.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor-notes.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-04-15",
-  "datePublished": "2025-04-15"
+  "dateModified": "2026-02-05",
+  "datePublished": "2026-02-05"
 }
 
   </script><script>
