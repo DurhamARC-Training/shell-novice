@@ -139,7 +139,7 @@ are made when you check with `ls -F`.
 
 Commands treat names starting with `-` as options.
 
-3. Stick with letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
+3. Stick with lowercase letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
 
 Many other characters have special meanings on the command line.
 We will learn about some of these during this lesson.
@@ -149,6 +149,12 @@ expected and can even result in data loss.
 If you need to refer to names of files or directories that have spaces
 or other special characters, you should surround the name in single
 [quotes](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
+
+It is often good practice
+to use all lowercase letters in names of files and directories;
+Windows and macOS file systems are typically case insensitive
+and therefore unable to distinguish between
+`thesis` and `Thesis` in the same directory.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -498,6 +504,9 @@ you will see a message that the directory has been omitted because `-r not speci
 
 ``` bash
 $ cp thesis thesis_backup
+```
+
+```error
 cp: -r not specified; omitting directory 'thesis'
 ```
 
@@ -688,6 +697,9 @@ or sets of characters when navigating the Unix file system.
 
 For this exercise, you can test the commands in the `shell-lesson-data/exercise-data` directory.
 
+We have seen how `cp` behaves when given two arguments,
+but `cp` behaves differently when given three or more arguments.
+Let's try giving `cp` three arguments.
 In the example below, what does `cp` do when given several filenames and a directory name?
 
 ```bash
@@ -714,12 +726,11 @@ $ cp minotaur.dat unicorn.dat basilisk.dat
 
 ## Solution
 
-If given more than one file name followed by a directory name
-(i.e. the destination directory must be the last argument),
-`cp` copies the files to the named directory.
+When `cp` is given two arguments and the second is a destination directory
+`cp` copies the files to the destination directory.
 
-If given three file names, `cp` throws an error such as the one below,
-because it is expecting a directory name as the last argument.
+If given three or more arguments, `cp` throws an error such as the one below,
+because it is expecting a destination directory name as the last argument.
 
 ```error
 cp: target 'basilisk.dat' is not a directory
