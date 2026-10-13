@@ -89,22 +89,24 @@ in a single operation:
 $ mkdir -p ../project/data ../project/results
 ```
 
-The `-R` option to the `ls` command will list all nested subdirectories within a directory.
-Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
+Let's use `ls -F` to list the new directories we just created in the
 `project` directory:
 
 ```bash
-$ ls -FR ../project
+$ ls -F ../project
 ```
 
 ```output
-../project/:
 data/  results/
-
-../project/data:
-
-../project/results:
 ```
+
+:::::::::::::::::::::::::::::::::::::::::  instructor
+
+One could use `ls -R` to list a directory hierarchy, but rather
+than introducing it in `cp` context, `find` can be used instead
+and is explained more deeply in the `find` episode.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -191,7 +193,7 @@ not be powerful enough or flexible enough for the work you need to do
 after this workshop. On Unix systems (such as Linux and macOS),
 many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
 [Vim](https://www.vim.org/) (both of which require more time to learn),
-or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
+or a graphical editor such as [Gedit](https://gedit-text-editor.org/)
 or [VScode](https://code.visualstudio.com/). On Windows, you may wish to
 use [Notepad++](https://notepad-plus-plus.org/).  Windows also has a built-in
 editor called `notepad` that can be run from the command line in the same
@@ -477,9 +479,11 @@ $ ls quotes.txt thesis/quotations.txt
 quotes.txt   thesis/quotations.txt
 ```
 
-We can also copy a directory and all its contents by using the
-[recursive](https://en.wikipedia.org/wiki/Recursion) option `-r`,
-e.g. to back up a directory:
+The `-r` or `--recursive` option for `cp`
+applies the command not just to the specified directory,
+but to all its contents.
+
+As an example, we can use this to back up a directory:
 
 ```bash
 $ cp -r thesis thesis_backup
@@ -509,6 +513,31 @@ $ cp thesis thesis_backup
 ```error
 cp: -r not specified; omitting directory 'thesis'
 ```
+
+:::::::::::::::::::::::::::::::::::::::  callout
+
+### Destination Can Be New Name or Directory
+
+When we use two arguments with `mv` or `cp`,
+the second argument can be the location and new name
+we want our file to have. Alternatively,
+if we provide the path to an existing directory as the second argument,
+`mv`/`cp` will interpret that to mean that we want the file copied/moved
+to that directory without changing its name.
+
+For example:
+
+```bash
+$ cp quotes.txt thesis
+```
+
+accomplishes the same thing as
+
+```bash
+$ cp quotes.txt thesis/quotes.txt
+```
+
+:::::::::::::::::::::::::::::::::::::::  
 
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -697,8 +726,10 @@ or sets of characters when navigating the Unix file system.
 
 For this exercise, you can test the commands in the `shell-lesson-data/exercise-data` directory.
 
-We have seen how `cp` behaves when given two arguments,
-but `cp` behaves differently when given three or more arguments.
+We have seen how `cp` behaves when given two arguments. The second argument can
+be a filename (what to name the copy) or an existing directory (where to put the copy).
+
+`cp` behaves slightly differently when given three or more arguments.
 Let's try giving `cp` three arguments.
 In the example below, what does `cp` do when given several filenames and a directory name?
 
@@ -726,11 +757,12 @@ $ cp minotaur.dat unicorn.dat basilisk.dat
 
 ## Solution
 
-When `cp` is given two arguments and the second is a destination directory
-`cp` copies the files to the destination directory.
+When `cp` is given three or more arguments,
+the last argument must be a directory.
+`cp` copies the other files specified
+into that directory. If the last argument
+is a file name, you get an error:
 
-If given three or more arguments, `cp` throws an error such as the one below,
-because it is expecting a destination directory name as the last argument.
 
 ```error
 cp: target 'basilisk.dat' is not a directory
