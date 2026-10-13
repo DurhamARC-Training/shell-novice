@@ -549,7 +549,7 @@ The following diagram
 shows what happens when the modified loop is executed and demonstrates how the
 judicious use of `echo` is a good debugging technique.
 
-![](fig/shell_script_for_loop_flow_chart.svg){alt='The for loop "for filename in .dat; do echo cp $filename original-$filename;done" will successively assign the names of all ".dat" files in your currentdirectory to the variable "$filename" and then execute the command. With thefiles "basilisk.dat", "minotaur.dat" and "unicorn.dat" in the current directorythe loop will successively call the echo command three times and print threelines: "cp basislisk.dat original-basilisk.dat", then "cp minotaur.datoriginal-minotaur.dat" and finally "cp unicorn.datoriginal-unicorn.dat"'}
+![](fig/shell_script_for_loop_flow_chart.svg){alt='The for loop "for filename in .dat; do echo cp $filename original-$filename;done" will successively assign the names of all ".dat" files in your current directory to the variable "$filename" and then execute the command. With the files "basilisk.dat", "minotaur.dat" and "unicorn.dat" in the current directory the loop will successively call the echo command three times and print threelines: "cp basislisk.dat original-basilisk.dat", then "cp minotaur.datoriginal-minotaur.dat" and finally "cp unicorn.datoriginal-unicorn.dat"'}
 
 ## Nelle's Pipeline: Processing Files
 
@@ -663,16 +663,17 @@ NENE01751A.txt
 ...
 ```
 
-1518 times 5 seconds,
-divided by 60,
-tells her that her script will take about two hours to run.
+The reduced sample  dataset used here has 17 files.
+Thus, 17 times 5 seconds,
+tells her that her script will take about 85 seconds to run.
+The full dataset has 1520 files, which would take about 2 hours to run.
 As a final check,
 she opens another terminal window,
 goes into `north-pacific-gyre`,
 and uses `cat stats-NENE01729B.txt`
 to examine one of the output files.
 It looks good,
-so she decides to get some coffee and catch up on her reading.
+so she decides to catch up on social media posts while waiting.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
